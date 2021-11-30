@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipes",
+  "info": {
+    "name": "recipes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "img": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "ingredients": {
+      "type": "json"
+    },
+    "steps": {
+      "type": "json"
+    },
+    "likes": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "category": {
+      "via": "recipes",
+      "model": "categories"
+    },
+    "servings": {
+      "type": "integer"
+    },
+    "author": {
+      "via": "recipes",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}
